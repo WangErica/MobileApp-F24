@@ -5,9 +5,11 @@ import {useState} from 'react'
 // this is the library we installed, we are importing the favorite.svg as a react component
 // RENamed to heart
 import {ReactComponent as Heart} from '@material-design-icons/svg/filled/favorite.svg'
+import './styles.css'
 
 export default function UserRating() {
   const [count, setCount] = useState(0)
+  const removeButton = true
 
   const handlePlusClick = () => {
     if (count < 5) {
@@ -24,11 +26,12 @@ export default function UserRating() {
   }
 
   return (
-    <div>
-      <div>
-      <button onClick={handleMinusClick}>[-]</button>
-      </div>
-      <span>
+    <div className = "user_rating">
+      {/* <div className = "button_container"> */}
+        {count > 0 && <button onClick={handleMinusClick}>-</button>}
+      {/* </div> */}
+
+      <span className = "hearts">
         {/* {count} */}
         {[...Array(count)].map((heart, i) => {
           return (
@@ -38,9 +41,9 @@ export default function UserRating() {
           )
         })}
       </span>
-      <div>
-      <button onClick={handlePlusClick}>[+]</button>
-      </div>
+      {/* <div className = "button_container"> */}
+        {count < 5 && <button onClick={handlePlusClick}>+</button>}
+      {/* </div> */}
     </div>
   )
 }

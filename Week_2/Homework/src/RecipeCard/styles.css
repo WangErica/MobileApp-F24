@@ -79,3 +79,21 @@
     padding-left: 1.25rem;
   }
 }
+
+.user_rating {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.hearts {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
