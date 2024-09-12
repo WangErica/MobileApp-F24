@@ -4,13 +4,13 @@ export const RECIPE = {
   description:
     'Some sort of lovely description about the best buttermilk pancakes in the world.',
   ingredients: [
-    '3/4 cup Melted butter',
-    '2 tbsp Whole milk',
-    '1 Egg',
-    '3/4 cup All purpose flour',
-    '2 tsp Baking powder',
-    '2 tbsp Sugar',
-    '1/2 tsp Salt',
+    {measure:'3/4 cup', item: 'Melted butter'},
+    {measure:'2 tbsp', item: ' Whole milk'},
+    {measure:'1', item: ' Egg'},
+    {measure:'3/4 cup', item: ' All purpose flour'},
+    {measure:'2 tsp', item: ' Baking powder'},
+    {measure:'2 tbsp', item: ' Sugar'},
+    {measure:'1/2 tsp', item: ' Salt'},
   ],
   instructions: [
     'Melt butter',

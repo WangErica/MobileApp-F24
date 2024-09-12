@@ -5,6 +5,7 @@ import RecipeImg from './RecipeImg'
 import IngredientsList from './IngredientsList'
 import InstructionsList from './InstructionsList'
 import Card from './Card'
+import UserRating from './UserRating'
 import './styles.css'
 
 // HW: Apply CSS styling, dont forget to import the style sheet in the other component files!
@@ -14,9 +15,14 @@ export default function RecipeCard() {
   return (
     <Card>
       <RecipeImg imgSrc={RECIPE.imgSrc} />
-      <RecipeInfo title={RECIPE.title} description={RECIPE.description} />
-      <IngredientsList ingredients={RECIPE.ingredients} />
-      <InstructionsList instructions={RECIPE.instructions} />
+      <div className = "card_text">
+        <RecipeInfo title={RECIPE.title} description={RECIPE.description} />
+        <div className = "card_lists">
+          <IngredientsList ingredients={RECIPE.ingredients} />
+          <InstructionsList instructions={RECIPE.instructions} />
+        </div>
+        <UserRating/>
+      </div>
     </Card>
   )
 }
