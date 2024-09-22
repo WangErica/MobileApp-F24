@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import ButtonPage from './pages/ButtonPage'
 import AccordionPage from './pages/AccordionPage'
 import ModalPage from './pages/ModalPage'
+import PopOverPage from './pages/PopOverPage'
 import NavBar from './components/NavBar'
 
 // IMPORTANT path here does not take a / before the route name
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<ButtonPage />} />
           <Route path="accordion" element={<AccordionPage />} />
           <Route path="modal" element={<ModalPage />} />
+          <Route path="popover" element={<PopOverPage />} />
         </Routes>
       </div>
     </div>
