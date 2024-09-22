@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 import PopOver from '../components/PopOver';
 
-const PopOverPage = () => {
+export default function PopOverPage(){
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">PopOver</h1>
@@ -12,5 +12,3 @@ const PopOverPage = () => {
     </div>
   );
 };
-
-export default PopOverPage;
