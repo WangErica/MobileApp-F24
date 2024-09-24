@@ -8,9 +8,9 @@ import NavBar from './components/NavBar'
 //IMPORTANT: path here does not need / before the route name
 export default function App() {
   return (
-    <div className="container mx-auto grid-cols-6 gap-4 mt-4">
+    <div className="container mx-auto grid-cols-7 gap-4 mt-4">
       <NavBar/>
-      <div className="col-span-5 relative">
+      <div className="col-span-6 relative">
         <Routes>
           <Route path="/" element ={<ButtonPage/>}/>
           <Route path="accordion" element ={<AccordionPage/>}/>
