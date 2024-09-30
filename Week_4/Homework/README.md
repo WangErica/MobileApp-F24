@@ -1,0 +1,1 @@
+I want to create a to-do list app for travel. I want to add a budget calculator, maybe add some reminders like adding notification settings. My target user is for anyone who travels. To make it more tailored, maybe add an api of google maps or something that has data of different locations, scenery and food.
