@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
+body {
+  font-family: 'Playpen Sans', sans-serif;
+  background-image: url('./travel.jpg'); /* Update this path to where you saved the image */
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  background-attachment: fixed; /* Keeps the background image fixed in place */
+}
+
+div {
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px; /* Adjust margin as needed to reduce space below the title */
+}
+
+form {
+  display: flex; /* Aligns form elements horizontally */
+  flex-direction: column; /* Stacks input and button vertically */
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px; /* Adjusts the spacing between input and button */
+  width: calc(100% - 20px); /* Adjusts width to avoid overflow */
+}
+
+button {
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+li .item {
+  flex-grow: 1; /* Ensures the item text takes up available space */
+}
+
+li .actions {
+  display: flex;
+  gap: 5px; /* Small space between the buttons */
+}
+
+@media (max-width: 400px) {
+  body{
+    background-image: url('./travel2.jpg');
+  }
+}
