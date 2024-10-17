@@ -13,16 +13,16 @@ div {
   margin: 5px;
   background-color: rgba(255, 255, 255, 0.8); /* Make the background a bit transparent */
   padding: 8px;
-  border-radius: 15px; /* Curve the borders */
+  border-radius: 15px; /* Curve the borders, make it round */
 }
 
 h2 {
-  margin-bottom: 5px; /* Adjust margin as needed to reduce space below the title */
+  margin-bottom: 5px; 
 }
 
 form {
-  display: flex; /* Align input field and button side by side */
-  align-items: center; /* Center items vertically */
+  display: flex; /* Align input field and button to be side by side */
+  align-items: center; 
   margin-left: 1em;
 }
 
@@ -71,7 +71,7 @@ li .actions {
   }
 
   li .actions {
-    flex-direction: row; /* Ensures buttons are side by side */
+    flex-direction: row; /* Make sure buttons are side by side */
   }
 
   button {
