@@ -61,7 +61,7 @@ const PackingList = () => {
     )
 
     // Accordion wrap the content, content being the checklist
-    return <Accordion label="Packing Checklist" content={content} /> 
+    return <Accordion label = "Packing Checklist" content = {content} /> 
 }
 
 export default PackingList
