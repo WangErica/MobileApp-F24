@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import Accordion from './Accordion'
 
 const PackingList = () => {
@@ -14,18 +14,18 @@ const PackingList = () => {
     // Add a new item to the packing list
     const handleSubmit = (event) => {
         event.preventDefault()
-        // Add new item with default 'unchecked' status, so the box isnt checked
+        // Add new item with default 'unchecked' status, so the box isn't checked
         setPackingItems([...packingItems, { title: item, checked: false }]) 
         setItem('') // Clear the input field after adding
     }
 
-    // Remove item from the packing list by index
+    // Remove the item from the packing list by index
     const handleDelete = (index) => {
         // Filter out the item to delete
         setPackingItems(packingItems.filter((_, i) => i !== index)) 
     }
 
-    // if clicked add a check to the box 
+    // If clicked, add a check to the box 
     const handleCheck = (index) => {
         const updatedItems = packingItems.map((item, i) => {
         if (i === index) {
@@ -48,7 +48,7 @@ const PackingList = () => {
             {packingItems.map((item, index) => (
             <li key={index}>
                 <input type="checkbox" checked={item.checked} onChange={() => handleCheck(index)} />
-                    <span className="item" style={{ textDecoration: item.checked ? 'line-through' : 'none' }}>
+                    <span className="item" style={{textDecoration: item.checked ? 'line-through' : 'none'}}>
                     {item.title}
                     </span>
                 <div className="actions">

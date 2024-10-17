@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
 const TodoEdit = (props) => {
-  const { todo, onSubmit } = props
+  const {todo, onSubmit} = props
   const [title, setTitle] = useState(todo.title)
 
   const handleChange = (event) => {

@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import TodoEdit from './TodoEdit'
 
 const TodoItem = (props) => {
-  const { todo, onDelete, onEdit } = props
+  const {todo, onDelete, onEdit} = props
   const [showEdit, setShowEdit] = useState(false)
 
   const handleDelete = () => {

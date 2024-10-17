@@ -3,7 +3,7 @@
 import {useState} from 'react'
 
 const TodoCreate = (props) => {
-  const { onCreate } = props
+  const {onCreate} = props
   const [title, setTitle] = useState('')
 
   const handleChange = (event) => {
