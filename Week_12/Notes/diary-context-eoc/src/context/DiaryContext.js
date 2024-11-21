@@ -11,11 +11,23 @@ const postReducer = (state, action) => {
         ...state,
         {
           id: Math.floor(Math.random() * 10000),
-          title: `Diary Post #${state.length + 1}`,
+          title: action.payload.title,
+          content: action.payload.content,
         },
       ]
     case 'delete_post':
       return state.filter((post) => post.id !== action.payload)
+    case 'edit_post':
+      return state.map((post) => {
+        // if the id matches the one we want to edit, return the new payload instead of the old post
+        // if (post.id === action.payload.id){
+        //   return action.payload
+        // } else{
+        //   return post
+        // }
+        // ternary version
+        return post.id === action.payload.id ? action.payload : post
+      })
     default:
       return state
   }
@@ -30,18 +42,28 @@ export const DiaryProvider = ({children}) => {
 
   // useReducer takes 2 arguments, the first is the reducer function we want to pass our actions into
   // the second is our initial state
-  const [state, dispatch] = useReducer(postReducer, [])
+  const [state, dispatch] = useReducer(postReducer, [{id:123, title:'Fake Post 1', content:'Blah Blah',}])
 
-  const addDiaryPost = () => {
-    dispatch({type: 'add_post'})
+  const addDiaryPost = (title, content, callback) => {
+    dispatch({type: 'add_post', payload: {title, content}})
+    if (callback){
+      callback()
+    }
   }
 
   const deleteDiaryPost = (id) => {
     dispatch({type: 'delete_post', payload: id})
   }
 
+  const editDiaryPost = (id, title, content, callback) => {
+    dispatch({type: 'edit_post', payload: {id, title, content}})
+    if (callback){
+      callback()
+    }
+  }
+
   return (
-    <DiaryContext.Provider value={{data: state, addDiaryPost, deleteDiaryPost}}>
+    <DiaryContext.Provider value={{state, addDiaryPost, deleteDiaryPost, editDiaryPost}}>
       {children}
     </DiaryContext.Provider>
   )

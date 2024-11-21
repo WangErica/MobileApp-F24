@@ -4,31 +4,41 @@ import {
   Text,
   View,
   FlatList,
-  Button,
   TouchableOpacity,
 } from 'react-native'
 import DiaryContext from '../context/DiaryContext'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
-const IndexScreen = () => {
-  const {data, addDiaryPost, deleteDiaryPost} = useContext(DiaryContext)
+const IndexScreen = ({navigation}) => {
+  const {state, addDiaryPost, deleteDiaryPost} = useContext(DiaryContext)
   return (
     <View>
-      <Button title="Add Post" onPress={addDiaryPost} />
       <FlatList
-        data={data}
+        data={state}
         keyExtractor={(post) => post.title}
         renderItem={({item}) => (
+          // brings you to the viewscreen
+        <TouchableOpacity onPress={() => navigation.navigate('View',{id: item.id})}>
           <View style={styles.row}>
             <Text style={styles.title}>{item.title}</Text>
             <TouchableOpacity onPress={() => deleteDiaryPost(item.id)}>
               <MaterialIcons name="delete" size={24} color="#333" />
             </TouchableOpacity>
           </View>
+          </TouchableOpacity>
         )}
       />
     </View>
   )
+}
+//Adds an add button on the screen name block
+IndexScreen.navigationOptions = ({navigation}) => {
+  return {
+    headerRight: () =>( 
+    <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+      <MaterialIcons style={styles.addIcon} name="add" size={30} color="black" />
+    </TouchableOpacity>
+  )}
 }
 
 const styles = StyleSheet.create({
@@ -43,6 +53,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+  },
+  addIcon:{
+    marginRight: 10,
   },
 })
 
