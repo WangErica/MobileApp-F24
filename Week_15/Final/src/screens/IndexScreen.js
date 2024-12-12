@@ -164,5 +164,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// Export the IndexScreen component as the default export
 export default IndexScreen;

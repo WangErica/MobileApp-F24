@@ -33,6 +33,7 @@ const postReducer = (state, action) => {
       return state.map((post) => {
         return post.id === action.payload.id ? action.payload : post;
       });
+      //Handling the toggling of favorite
     case 'toggle_favorite':
       return state.map((post) =>
         post.id === action.payload ? { ...post, favorite: !post.favorite } : post
@@ -66,6 +67,7 @@ const editDiaryPost = (dispatch) => {
   };
 };
 
+// Defined to dispatch action
 const toggleFavoritePost = (dispatch) => {
   return (id) => {
     dispatch({ type: 'toggle_favorite', payload: id });
